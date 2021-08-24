@@ -10,10 +10,14 @@ const useStyles = createUseStyles({
         minHeight: "100vh",
         position: "relative",
         paddingBottom: "4em",
+        paddingLeft: "2em",
+        paddingRight: "2em",
+        fontFamily: "Karla",
+        color: "#2b2727"
     },
     main: {
         padding: "2em 0px",
-        maxWidth: "768px",
+        maxWidth: "900px",
         margin: "0 auto",
     },
 });

@@ -8,6 +8,7 @@ const useStyles = createUseStyles({
         position: "absolute",
         bottom: "2em",
         textAlign: "center",
+        color: "#35375b"
     },
 });
 

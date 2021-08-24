@@ -6,19 +6,36 @@ const useStyles = createUseStyles({
     navbar: {
         width: "100vw",
         height: "60px",
-        backgroundColor: "rgb(54,53,60)",
-        color: "white",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "5em"
+    },
+
+    menu: {
+        display: "flex",
+        justifyContent: "space-around",
         alignItems: "center",
     },
-    logoText: {
-        fontSize: "1.5rem",
-        letterSpacing: "2px",
-        textDecoration: "none",
-        color: "white",
+
+    menuOption: {
+        backgroundColor: "rgba(53, 55, 91, 0.05)",
+        borderRadius: "20px",
+        color: "#35375b",
         "&:hover": {
-            color: "white",
+            color: "#35375b",
+        },
+        padding: "1em",
+        fontSize: "1.2em",
+        marginRight: "1em",
+    },
+
+    logoText: {
+        fontSize: "3rem",
+        textDecoration: "none",
+        color: "#2b2727",
+        "&:hover": {
+            color: "#2b2727",
         },
     },
 });
@@ -30,6 +47,14 @@ export const Header = () => {
             <Link to="/" className={`${classes.logoText} no-select`}>
                 Linked Data Viz Catalogue
             </Link>
+            <div className={classes.menu}>
+                <Link to="/about" className={classes.menuOption}>
+                    <b>About</b>
+                </Link>
+                <div className={classes.menuOption}>
+                    <b>Add visualization</b>
+                </div>
+            </div>
         </header>
     );
 };

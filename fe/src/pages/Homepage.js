@@ -8,8 +8,8 @@ import FetchingPageLayout from "../components/FetchingPageLayout";
 import WorkCard from "../components/WorkCard";
 
 const useStyles = createUseStyles({
-    title: {
-
+    grid: {
+        alignSelf: "stretch",
     }
 });
 
@@ -23,7 +23,7 @@ export const Homepage = () => {
                 <article>
                     <Grid doubling columns={3}>
                         {works.map((item, index) => (
-                            <Grid.Column key={index}>
+                            <Grid.Column class={classes.grid} key={index}>
                                 <WorkCard index={index} item={item} />
                             </Grid.Column>
                         ))}
