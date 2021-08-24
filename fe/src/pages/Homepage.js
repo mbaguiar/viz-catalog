@@ -1,5 +1,3 @@
-import React, { useState, useRef } from "react";
-import PropTypes from "prop-types";
 import { createUseStyles } from "react-jss";
 import useGetWorks from "../hooks/getWorks";
 import { Grid } from "semantic-ui-react";
@@ -23,7 +21,7 @@ export const Homepage = () => {
                 <article>
                     <Grid doubling columns={3}>
                         {works.map((item, index) => (
-                            <Grid.Column class={classes.grid} key={index}>
+                            <Grid.Column className={classes.grid} key={index}>
                                 <WorkCard index={index} item={item} />
                             </Grid.Column>
                         ))}

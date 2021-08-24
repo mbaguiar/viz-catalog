@@ -54,7 +54,7 @@ export const WorkCard = ({ index, item }) => {
     const typeColor = getTypeColor(item.type);
     
     return (
-        <a href={`/work/${item.id}`} className={classes.itemCard}>
+        <a href={`/works/${item.id}`} className={classes.itemCard}>
             <Image src={placeholder} size="large" />
             <header className={classes.cardHeader}>
                 <span className={classes.itemName}>{item.name}</span>

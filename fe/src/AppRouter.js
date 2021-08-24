@@ -8,7 +8,7 @@ import AboutPage from "./pages/AboutPage";
 export const AppRouter = () => (
     <Router>
         <Homepage path="/"/>
-        <WorkPage path="/work/:id" />
+        <WorkPage path="/works/:id" />
         <AboutPage path="/about"/>
     </Router>
 );
