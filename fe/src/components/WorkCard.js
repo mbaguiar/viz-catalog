@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { createUseStyles } from "react-jss";
 import placeholder from "../assets/placeholder.png";
 import { Image } from "semantic-ui-react";
-import getTypeColor from "../utils/typeColor";
+import TypeLabel from "./TypeLabel";
 
 const useStyles = createUseStyles({
     itemCard: {
@@ -35,23 +35,10 @@ const useStyles = createUseStyles({
     itemName: {
         fontSize: "1.5em",
     },
-    itemType: {
-        marginTop: "0.6em",
-        color: "white",
-        backgroundColor: "rgba(0, 159, 147, 0.7)",
-        display: "flex",
-        alignItems: "left",
-        paddingTop: "2%",
-        paddingBottom: "2%",
-        paddingLeft: "3%",
-        paddingRight: "3%",
-        borderRadius: "15px",
-    }
 });
 
 export const WorkCard = ({ index, item }) => {
     const classes = useStyles();
-    const typeColor = getTypeColor(item.type);
     
     return (
         <a href={`/works/${item.id}`} className={classes.itemCard}>
@@ -59,7 +46,7 @@ export const WorkCard = ({ index, item }) => {
             <header className={classes.cardHeader}>
                 <span className={classes.itemName}>{item.name}</span>
                 <span className={classes.itemYear}>{item.year}</span>
-                <span className={classes.itemType} style={{backgroundColor: `${typeColor}`}}>{item.type}</span>
+                <TypeLabel type={item.type} size="small"></TypeLabel>
             </header>
         </a>
     );

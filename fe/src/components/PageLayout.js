@@ -17,7 +17,7 @@ const useStyles = createUseStyles({
     },
     main: {
         padding: "2em 0px",
-        maxWidth: "900px",
+        maxWidth: "1000px",
         margin: "0 auto",
     },
 });
