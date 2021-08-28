@@ -6,7 +6,7 @@ import PageLayout from "./PageLayout";
 export const FetchingPageLayout = ({ loading, error, children }) => (
     <PageLayout>
         { loading && <Loader active inline="centered" /> }
-        { error && <p>error</p> }
+        { error && <p>Page Not Found</p> }
         { !loading && !error && children }
     </PageLayout>
 );

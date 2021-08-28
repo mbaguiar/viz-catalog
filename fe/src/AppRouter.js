@@ -4,12 +4,14 @@ import { Router } from "@reach/router";
 import Homepage from "./pages/Homepage";
 import WorkPage from "./pages/WorkPage";
 import AboutPage from "./pages/AboutPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export const AppRouter = () => (
     <Router>
         <Homepage path="/"/>
         <WorkPage path="/works/:id" />
         <AboutPage path="/about"/>
+        <NotFoundPage default />
     </Router>
 );
 

@@ -94,6 +94,9 @@ export const WorkPage = ({ id }) => {
                     </div>
                 </div>
             </article>}
+            {!loading && error && 
+            <p>Page Not Found</p>
+            }
         </FetchingPageLayout>
     );
 };
