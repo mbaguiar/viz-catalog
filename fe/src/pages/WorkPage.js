@@ -63,7 +63,7 @@ export const WorkPage = ({ id }) => {
             <article>
                 <div className={classes.work}>
                     <div className={classes.workInfo}>
-                        <Image src={placeholder} size="huge"/>
+                        <Image src={work.img} size="huge"/>
                         <div className={classes.workHeader1}>
                             <div className={classes.workTitle}>{work.name}</div>
                         </div>

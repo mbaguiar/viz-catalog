@@ -42,7 +42,7 @@ export const WorkCard = ({ index, item }) => {
     
     return (
         <a href={`/works/${item.id}`} className={classes.itemCard}>
-            <Image src={placeholder} size="large" />
+            <Image src={item.img} size="large" />
             <header className={classes.cardHeader}>
                 <span className={classes.itemName}>{item.name}</span>
                 <span className={classes.itemYear}>{item.year}</span>
@@ -59,6 +59,7 @@ WorkCard.propTypes = {
         name: PropTypes.string.isRequired,
         year: PropTypes.number.isRequired,
         type: PropTypes.string.isRequired,
+        img: PropTypes.string.isRequired,
     }),
 };
 

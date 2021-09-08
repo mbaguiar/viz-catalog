@@ -11,7 +11,7 @@ CREATE TABLE Work (
     type                TEXT,
     shortDescription    TEXT,
     authors             TEXT,
-    link                TEXT,
+    img                 TEXT,
     paper               TEXT
 );
 
