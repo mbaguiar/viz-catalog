@@ -9,7 +9,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 export const AppRouter = () => (
     <Router>
         <Homepage path="/"/>
-        <WorkPage path="/works/:id" />
+        <WorkPage path="/work/:id" />
         {/* <AboutPage path="/about"/> */}
         <NotFoundPage default />
     </Router>
