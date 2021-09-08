@@ -1,5 +1,26 @@
 {
-  "dependencies": {
-    "express-validator": "^6.12.1"
+  "name": "viz-catalog",
+  "description": "A catalogue of visualization techniques for Linked Data",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd be && npm install && npm start",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbaguiar/viz-catalog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbaguiar/viz-catalog/issues"
+  },
+  "homepage": "https://github.com/mbaguiar/viz-catalog#readme",
+  "engines": {
+    "node": "15.12.0"
   }
 }
