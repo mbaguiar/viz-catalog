@@ -27,6 +27,7 @@ const useStyles = createUseStyles({
         height: "100%",
         flexDirection: "column",
         alignItems: "flex-start",
+        justifyContent: "flex-end",
     },
     itemYear: {
         color: "rgba(0,0,0,.5)",

@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { createUseStyles } from "react-jss";
 import { Grid } from "semantic-ui-react";
+import { useMediaQuery } from "react-responsive";
 
 const useStyles = createUseStyles({
     card: {
@@ -10,6 +11,15 @@ const useStyles = createUseStyles({
         backgroundColor: "#E2E3EE",
         borderRadius: "20px",
         margin: "2px 10px 10px 10px",
+        width: "100%",
+        overflow: "hidden"
+    },
+    cardMobile: {
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "#E2E3EE",
+        borderRadius: "20px",
+        margin: "2px 0 10px 0",
         width: "100%",
         overflow: "hidden"
     },
@@ -33,9 +43,10 @@ const useStyles = createUseStyles({
 
 export const InfoCard = ({ title, list, evaluation }) => {
     const classes = useStyles();
+    const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)"});
 
     return (
-        <div className={classes.card}>
+        <div className={isTabletOrMobile ? classes.cardMobile : classes.card}>
             <span className={classes.title}><b>{title}</b></span>
             <div className={classes.list}>
                 {list.map((item, index) => (

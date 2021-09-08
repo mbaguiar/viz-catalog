@@ -7,11 +7,17 @@ import placeholder from "../assets/placeholder.png";
 import PropTypes from "prop-types";
 import TypeLabel from "../components/TypeLabel";
 import { InfoCard } from "../components/InfoCard";
+import { Helmet } from "react-helmet";
+import { useMediaQuery } from "react-responsive";
 
 const useStyles = createUseStyles({
     work: {
         display: "flex",
         flexDirection: "row",
+    },
+    workMobile: {
+        display: "flex",
+        flexDirection: "column",
     },
     workInfo: {
         display: "flex",
@@ -39,6 +45,20 @@ const useStyles = createUseStyles({
         textAlign: "left",
         lineHeight: "100%",
     },
+    workTitleTablet: {
+        fontSize: "3em",
+        color: "#2b2727",
+        textAlign: "left",
+        lineHeight: "100%",
+        marginTop: "0.7em",
+    },
+    workTitleMobile: {
+        fontSize: "2em",
+        color: "#2b2727",
+        textAlign: "left",
+        lineHeight: "100%",
+        marginTop: "1em",
+    },
     workYear: {
         fontSize: "1.5rem",
     },
@@ -50,22 +70,34 @@ const useStyles = createUseStyles({
     text: {
         fontSize: "1.3em",
         lineHeight: "130%",
+        marginBottom: "2em",
     },
+    infoCards: {
+        display: "flex",
+        flexWrap: "wrap",
+    }
 })
 
 export const WorkPage = ({ id }) => {
     const classes = useStyles();
     const [work, loading, error] = useGetWork(id);
 
+    const isTablet = useMediaQuery({ query: "(max-width: 768px)"});
+    const isMobile = useMediaQuery({ query: "(max-width: 380px)"});
+
     return (
         <FetchingPageLayout loading={loading} error={error}>
+            <Helmet>
+                <title>{work.name}</title>
+            </Helmet>
             {!loading && !error && work &&
             <article>
-                <div className={classes.work}>
+                <div className={isTablet ? classes.workMobile : classes.work}>
                     <div className={classes.workInfo}>
                         <Image src={work.img} size="huge"/>
                         <div className={classes.workHeader1}>
-                            <div className={classes.workTitle}>{work.name}</div>
+                            <div className={isMobile ? classes.workTitleMobile : 
+                                (isTablet ? classes.workTitleTablet : classes.workTitle)}>{work.name}</div>
                         </div>
                         <div className={classes.workHeader2}>
                             <TypeLabel type={work.type} size="big"></TypeLabel>
@@ -73,7 +105,7 @@ export const WorkPage = ({ id }) => {
                         </div>
                         <span className={classes.text}>{work.description}</span>
                     </div>
-                    <div>
+                    <div className={isTablet ? classes.infoCards : ""}>
                         <InfoCard title="Interactive Features" list={work.interactiveFeatures} evaluation={false}></InfoCard>
                         {work.singleVisualisations.length > 0 ?
                             <InfoCard title="Single Instance Visualizations" list={work.singleVisualisations} evaluation={false}></InfoCard> : 

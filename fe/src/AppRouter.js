@@ -10,7 +10,7 @@ export const AppRouter = () => (
     <Router>
         <Homepage path="/"/>
         <WorkPage path="/works/:id" />
-        <AboutPage path="/about"/>
+        {/* <AboutPage path="/about"/> */}
         <NotFoundPage default />
     </Router>
 );

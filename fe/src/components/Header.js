@@ -1,6 +1,7 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 import { Link } from "@reach/router";
+import { useMediaQuery } from "react-responsive";
 
 const useStyles = createUseStyles({
     navbar: {
@@ -9,7 +10,7 @@ const useStyles = createUseStyles({
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "5em"
+        padding: "5em 3em 5em 1.5em"
     },
 
     menu: {
@@ -38,13 +39,31 @@ const useStyles = createUseStyles({
             color: "#2b2727",
         },
     },
+    logoTextTablet: {
+        fontSize: "2rem",
+        textDecoration: "none",
+        color: "#2b2727",
+        "&:hover": {
+            color: "#2b2727",
+        },  
+    },
+    logoTextMobile: {
+        fontSize: "1.5rem",
+        textDecoration: "none",
+        color: "#2b2727",
+        "&:hover": {
+            color: "#2b2727",
+        },
+    },
 });
 
 export const Header = () => {
     const classes = useStyles();
+    const isTablet = useMediaQuery({ query: "(max-width: 768px)"});
+    const isMobile = useMediaQuery({ query: "(max-width: 414px)"});
     return (
         <header className={classes.navbar}>
-            <Link to="/" className={`${classes.logoText} no-select`}>
+            <Link to="/" className={isMobile ? classes.logoTextMobile : (isTablet ? classes.logoTextTablet : classes.logoText)}>
                 Linked Data Viz Catalogue
             </Link>
             <div className={classes.menu}>
