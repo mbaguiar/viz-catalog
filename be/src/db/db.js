@@ -81,6 +81,26 @@ const getEvaluations = async (id) => {
     return result;
 };
 
+const insertWork = async (name, year, description, domain, type) => {
+    let newId = null;
+    let result = await db.run("INSERT INTO Work (name, year, description, domain, type) VALUES ($name, $year, $description, $domain, $type)", {
+        $name: name,
+        $year: year,
+        $description: description,
+        $domain: domain,
+        $type: type,
+    }, function(error) {
+        if (error) {
+            console.log(error);
+            return;
+        } else {
+            console.log(this.lastID);
+            return;
+        }
+    });
+    return result.lastID;
+};
+
 module.exports = {
     db,
     getWorks,
@@ -90,4 +110,5 @@ module.exports = {
     getInteractiveFeature,
     getSearchSolutions,
     getEvaluations,
+    insertWork,
 };

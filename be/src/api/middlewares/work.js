@@ -19,7 +19,18 @@ const getWork = async (req, res) => {
     }
 };
 
+const createWork = async (req, res) => {
+    const { name, year, description, domain, type } = req.body;
+    const newId = await db.insertWork(name, year, description, domain, type);
+    if (newId) {
+        res.status(201).send({ newId: newId });
+    } else {
+        res.status(400).send();
+    }
+};
+
 module.exports = {
     getWork,
     getWorkCharacteristics,
+    createWork,
 };

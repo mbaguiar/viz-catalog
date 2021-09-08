@@ -48,12 +48,12 @@ export const Header = () => {
                 Linked Data Viz Catalogue
             </Link>
             <div className={classes.menu}>
-                <Link to="/about" className={classes.menuOption}>
-                    <b>About</b>
+                {/* <Link to="/about" className={classes.menuOption}> */}
+                    {/* <b>About</b>
                 </Link>
                 <div className={classes.menuOption}>
                     <b>Add visualization</b>
-                </div>
+                </div> */}
             </div>
         </header>
     );
